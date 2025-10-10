@@ -1,11 +1,11 @@
 
-# 📈 NSEI Data Server
+# NSEI Data Server
 
 A FastMCP tool server for fetching daily trade and market mover data from the National Stock Exchange (NSE) of India. This project is part of the **SLOP 2025** initiative and serves as a backend module for structured financial data access.
 
 ---
 
-## 🚀 Setup and Installation
+## Setup and Installation
 
 ### Prerequisites
 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 ### Start the Server
 
@@ -50,7 +50,7 @@ Or use any custom test runner defined in the repo.
 
 ---
 
-## ✨ Features
+## Features
 
 - Fetches daily trade data from NSE India
 - Retrieves market movers and top gainers/losers
@@ -60,7 +60,7 @@ Or use any custom test runner defined in the repo.
 
 ---
 
-## 🤝 How to Contribute
+## How to Contribute
 
 We welcome contributions from students, developers, and open-source enthusiasts.
 
@@ -68,12 +68,12 @@ Please see our [`CONTRIBUTING.md`](./CONTRIBUTING.md) file for guidelines on how
 
 ### Good First Issue
 
-> 📌 Issue: `SLoP5-25` – Docs: Complete the README.md  
-> 🏷️ Tags: `documentation`, `good first issue`, `improvements`
+>  Issue: `SLoP5-25` – Docs: Complete the README.md  
+>  Tags: `documentation`, `good first issue`, `improvements`
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
