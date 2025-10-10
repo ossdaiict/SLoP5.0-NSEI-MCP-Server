@@ -1,4 +1,4 @@
-```markdown
+
 # 📈 NSEI Data Server
 
 A FastMCP tool server for fetching daily trade and market mover data from the National Stock Exchange (NSE) of India. This project is part of the **SLOP 2025** initiative and serves as a backend module for structured financial data access.
@@ -12,7 +12,7 @@ A FastMCP tool server for fetching daily trade and market mover data from the Na
 - Python 3.10+
 - pip (Python package manager)
 - Git
-
+```markdown
 ### Installation Steps
 
 ```bash
