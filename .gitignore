@@ -1,9 +1,15 @@
-# File copied from https://github.com/github/gitignore/blob/main/Python.gitignore under CC0 1.0 Universal license
+# File partially copied from https://github.com/github/gitignore/blob/main/Python.gitignore under CC0 1.0 Universal license
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
 
 # C extensions
 *.so
@@ -153,6 +159,7 @@ activemq-data/
 .env
 .envrc
 .venv
+.venv/
 env/
 venv/
 ENV/
