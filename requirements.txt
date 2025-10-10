@@ -1,0 +1,8 @@
+requests
+httpx
+pytest
+mcp-server>=0.1.0
+python-dotenv>=1.0.0
+html2text>=2020.1.16
+certifi>=2023.7.22
+pandas>=2.0.0
