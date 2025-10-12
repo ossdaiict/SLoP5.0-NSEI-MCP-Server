@@ -9,6 +9,8 @@ def register_tool(mcp: FastMCP):
         """
         Get trades for a specific symbol or all symbols for a given date range.
         """
+        if ndays < 1:
+            return {"error": "Number of days (ndays) must be at least 1."}
         # TODO: Implement the logic for the get_trades tool.
         # 1. Fetch data using the service.
         # 2. Perform pandas aggregation.
