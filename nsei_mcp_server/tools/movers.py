@@ -9,6 +9,8 @@ def register_tool(mcp: FastMCP):
         """
         Get top market movers from the NSE for a given period.
         """
+        if ndays < 1:
+            return {"error": "Number of days (ndays) must be at least 1."}
         # TODO: Implement the logic for the get_top_movers tool.
         # 1. Fetch data using the service.
         # 2. Calculate percentage changes.
