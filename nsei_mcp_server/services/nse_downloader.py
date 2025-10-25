@@ -1,6 +1,15 @@
 import pandas as pd
 import requests
+import datetime
+import tempfile
+import zipfile
 import os
+
+"""
+initialising a cache here
+""" # fix to issue 5
+
+cache = {} # main module level cache dictionary
 
 def _post_process_bhav_copy(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -24,7 +33,11 @@ def _download_bhav_copy(date: str):
     Returns:
         pandas DataFrame containing the Bhav Copy data
     """
+    if date in cache:
+        return cache[date]
+    
     try:
+        
         session = requests.Session()
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -70,6 +83,8 @@ def _download_bhav_copy(date: str):
         # Cleanup
         os.unlink(temp_zip_path)
         os.unlink(temp_csv_path)
+
+        cache[date] = df # storing in cache if data already doesnt exist
         
         return df
         
