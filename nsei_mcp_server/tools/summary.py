@@ -19,8 +19,8 @@ def register_tool(mcp: FastMCP):
             return {"error": "No data available for the given date."}
 
         # Compute totals from actual Bhav Copy columns
-        total_volume = data["TOTTRDQTY"].sum()
-        total_value = data["TOTTRDVAL"].sum()
+        total_volume = data["TtlTradgVol"].sum()
+        total_value = data["TtlTrfVal"].sum()
 
         # Return formatted summary
         return {
