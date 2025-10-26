@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import pandas as pd
 import requests
 import datetime
@@ -93,13 +94,36 @@ def _download_bhav_copy(date: str):
         return None
 
 
-def get_data_for_date_range(date: str, ndays: int):
-    """
-    Get data for a specific date range.
-    
-    Args:
-        date: date string in format 'YYYY-MM-DD'
-        ndays: number of days to get data leading upto the given date
-    """
-    # TODO: Implement the logic to loop through dates and aggregate data.
-    raise NotImplementedError
+def get_data_for_date_range(date: str, ndays: int):         # this function init fixes the issue #3
+
+    all_data = []  # list to store daily DataFrames
+
+    # converts start_date to datetime object
+    current_date = datetime.strptime(date, "%Y-%m-%d")
+
+    for _ in range(ndays): # main loop that iterates through each day in the range
+        date_str = current_date.strftime("%Y-%m-%d")
+        try:
+            # downloads data for this date
+            df = _download_bhav_copy(date_str)
+
+            if df is not None and not df.empty:
+                all_data.append(df)
+            else:
+                print("No data found , skipping")
+
+        except Exception as e:
+            print("Error downloading the data")
+
+        # move to next day
+        current_date += timedelta(days=1)
+
+    if not all_data:
+        # return empty DataFrame if no data was downloaded
+        return pd.DataFrame()
+
+    # combine all daily DataFrames into one master DataFrame
+    combined_df = pd.concat(all_data, ignore_index=True)
+
+    return combined_df
+
